@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mTKgVcNnzuA=",
+  "dgSpecHash": "m9h4xEePpCs=",
   "success": true,
   "projectFilePath": "C:\\Users\\Student\\OneDrive - ADvTECH Ltd\\CyberAwarenessBot\\CyberAwarenessBot.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Student\\.nuget\\packages\\system.windows.extensions\\10.0.5\\system.windows.extensions.10.0.5.nupkg.sha512"
+  ],
   "logs": []
 }
