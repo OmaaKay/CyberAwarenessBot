@@ -1,0 +1,63 @@
+using System;
+using System.Threading;
+
+namespace CyberAwarenessBot
+{
+    public class Chatbot
+    {
+
+        
+        //  Image Display
+        public static void DrawBotLogo()
+        {
+            Console.Clear(); 
+            Console.ForegroundColor = ConsoleColor.Green; 
+
+            // This is the actual ASCII artwork (raw string literal)
+            string botLogo = @"
+         |----------------------------------------- |
+         |    |o  o|   CYBER GUARD SA   |
+         |    |_^_|     SOUTH AFRICA       |
+         |   /|___|\     CYBER UNIT           |
+         |   ( |   | )                                      |
+         |    | __ |         [ALERT]                |
+         |     / \ \                                        |
+         |                                                  |
+         |------------------------------------------|
+
+";
+            Console.WriteLine(botLogo);
+            Console.ResetColor();
+        }
+
+        // Enhanced UI - Typing Effect
+        public static void Type(string text, ConsoleColor color = ConsoleColor.White)
+        {
+            Console.ForegroundColor = color;
+            foreach (char c in text)
+            {
+                Console.Write(c);
+                Thread.Sleep(25); // The "Typewriter" speed
+            }
+            Console.WriteLine();
+            Console.ResetColor();
+        }
+
+        // Decorative Borders
+        public static void DrawDivider()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("--------------------------------------------------");
+            Console.ResetColor();
+        }
+
+        public static void DrawHeader(string title)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("==================================================");
+            Console.WriteLine($"      {title.ToUpper()}      ");
+            Console.WriteLine("==================================================");
+            Console.ResetColor();
+        }
+    }
+}

@@ -29,8 +29,61 @@ Console.WriteLine("Looking for audio at: " + audioPath);
 
         // Part 2: ASCII art
         Console.WriteLine("===================================");
-        Console.WriteLine("   CYBERSECURITY AWARENESS BOT     ");
+        Chatbot.DrawBotLogo();
         Console.WriteLine("===================================");
+
+
+
+
+
+
+  Chatbot.DrawHeader("South African Cyber-Safety Assistant");
+
+            // Part 3: User Interaction
+            Chatbot.Type("[BOT]: Dumelang! I am your security assistant.", ConsoleColor.Cyan);
+            Chatbot.Type("[BOT]: To begin, may I ask what your name is?", ConsoleColor.Cyan);
+
+            Console.Write("\n[YOU]: ");
+            string nameInput = Console.ReadLine();
+
+            // 3. Input Validation (Requirement #5 - 5 Marks)
+            while (string.IsNullOrWhiteSpace(nameInput))
+            {
+                Chatbot.Type("(!) Please enter a valid name so I can personalize your session.", ConsoleColor.Red);
+                Console.Write("[YOU]: ");
+                nameInput = Console.ReadLine();
+            }
+
+            User user = new User(nameInput);
+
+            // 4. Personalized Greeting (Requirement #4)
+            Console.Clear();
+            Chatbot.DrawHeader("Session Active");
+            Chatbot.Type($"Hello, {user.Name}. It is vital for South Africans to stay safe online.", ConsoleColor.Green);
+            Chatbot.DrawDivider();
+            
+            Chatbot.Type("I can help you with: \n1. Password Safety \n2. Phishing Scams \n3. Safe Browsing");
+            Chatbot.Type("\nWhat would you like to ask about first?", ConsoleColor.Yellow);
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
     //make the bot "talk" by printing messages with a delay AND DRAW IT
         
 
@@ -69,7 +122,7 @@ TypeLine("I am programmed to help you navigate the digital landscape of SA safel
 Console.WriteLine("==================================================");
 Console.ResetColor();
 
-
+*/
 
 
 
@@ -109,17 +162,3 @@ Console.ResetColor();
 
 
 
-
-/*
-string audioPath = "audio/greeting.wav";
-
-if (File.Exists(audioPath))
-{
-    SoundPlayer player = new SoundPlayer(audioPath);
-    player.PlaySync(); //waits until the audio stops to continue
-}
-else
-{
-    Console.WriteLine("Audio file not found.");
-}
-*/
