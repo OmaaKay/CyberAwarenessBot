@@ -60,5 +60,36 @@ namespace CyberAwarenessBot
             Console.WriteLine("==================================================");
             Console.ResetColor();
         }
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+// Method to create a typing effect for a conversational feel
+public void TypeMessage(string message, ConsoleColor color = ConsoleColor.White) // ConsoleColor color = ConsoleColor.White
+{
+    Console.ForegroundColor = color;
+    foreach (char c in message)
+    {
+        Console.Write(c);
+        // Slight delay for "conversational feel"
+        System.Threading.Thread.Sleep(25); 
+    }
+    Console.WriteLine();
+    Console.ResetColor();
+}
+
+
+
     }
 }

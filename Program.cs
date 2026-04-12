@@ -82,12 +82,16 @@ Console.WriteLine("Looking for audio at: " + audioPath);
             }
 
            
-
+Chatbot cb = new Chatbot();
         if (!string.IsNullOrWhiteSpace(input))
 {
     string response = botBrain.GetResponse(input);
-    Console.ForegroundColor = ConsoleColor.Cyan;
+    //Console.ForegroundColor = ConsoleColor.Cyan;
     Console.WriteLine($"BOT: {response}\n");
+
+    //implementing a typing feel
+    cb.TypeMessage(response, ConsoleColor.Green); //ConsoleColor.Green
+    Chatbot.DrawDivider();
 }
 else
 {
