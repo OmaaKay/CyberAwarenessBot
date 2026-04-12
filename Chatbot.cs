@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+//class mainly for holding the ASCII art and other UI elements, to keep Program.cs cleaner and more focused on the flow of the conversation
 
 namespace CyberAwarenessBot
 {

@@ -46,7 +46,7 @@ Console.WriteLine("Looking for audio at: " + audioPath);
             Console.Write("\n[YOU]: ");
             string nameInput = Console.ReadLine();
 
-            // 3. Input Validation (Requirement #5 - 5 Marks)
+            // 3. Input Validation (requirement 5)
             while (string.IsNullOrWhiteSpace(nameInput))
             {
                 Chatbot.Type("(!) Please enter a valid name so I can personalize your session.", ConsoleColor.Red);
@@ -62,77 +62,44 @@ Console.WriteLine("Looking for audio at: " + audioPath);
             Chatbot.Type($"Hello, {user.Name}. It is vital for South Africans to stay safe online.", ConsoleColor.Green);
             Chatbot.DrawDivider();
             
-            Chatbot.Type("I can help you with: \n1. Password Safety \n2. Phishing Scams \n3. Safe Browsing");
+            Chatbot.Type("I can help you with: \n1. Password Safety \n2. Phishing Scams \n3. Safe Browsing.Type 'exit' to stop.");
             Chatbot.Type("\nWhat would you like to ask about first?", ConsoleColor.Yellow);
 
-            
+        BotBrain botBrain = new BotBrain();
 
+   // The Conversation Loop---I am getting problems in my code from here
+        bool keepTalking = true;
+        while (keepTalking)
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write($"{user.Name.ToUpper()}: ");
+            string input = Console.ReadLine();
 
+            if (input != null && input.ToLower() == "exit")
+            {
+                keepTalking = false;
+                continue;
+            }
 
+           
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-    //make the bot "talk" by printing messages with a delay AND DRAW IT
-        
-
-    // --- Part 3: User Interaction ---
-
-// Set a cool color for the bot's voice
-Console.ForegroundColor = ConsoleColor.Cyan;
-TypeLine("\n[BOT]: Hello! I am your South African Cyber-Security Assistant.");
-TypeLine("[BOT]: Before we begin our safety briefing, what is your name?");
-Console.ResetColor();
-
-Console.Write("\n[YOU]: ");
-string inputName = Console.ReadLine();
-
-// Input Validation (Requirement #5)
-while (string.IsNullOrWhiteSpace(inputName))
+        if (!string.IsNullOrWhiteSpace(input))
 {
-    Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine("(!) I didn't catch that. Please enter your name to continue.");
-    Console.ResetColor();
-    Console.Write("[YOU]: ");
-    inputName = Console.ReadLine();
+    string response = botBrain.GetResponse(input);
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine($"BOT: {response}\n");
 }
+else
+{
+    Console.WriteLine("BOT: Please enter a valid question.\n");
+}
+        }
 
-// Create the User object
-User currentUser = new User(inputName);
-
-// Personalized Response (Requirement #3 & #4)
-Console.Clear(); // Keeps it professional
-// Re-display your ASCII Bot here so it stays at the top!
-
-Console.ForegroundColor = ConsoleColor.Green;
-Console.WriteLine("==================================================");
-TypeLine($"Welcome, {currentUser.Name}! It's a pleasure to meet you.");
-TypeLine("I am programmed to help you navigate the digital landscape of SA safely.");
-Console.WriteLine("==================================================");
-Console.ResetColor();
-
-*/
-
-
-
-
-
-
-
-
-
+        Chatbot.Type("Thank you for chatting with me. Stay safe online!", ConsoleColor.Green);
     }
+
+
+    
 
     static void TypeLine(string text)
 {
