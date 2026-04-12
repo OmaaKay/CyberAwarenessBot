@@ -90,7 +90,7 @@ Chatbot cb = new Chatbot();
     Console.WriteLine($"BOT: {response}\n");
 
     //implementing a typing feel
-    cb.TypeMessage(response, ConsoleColor.Green); //ConsoleColor.Green
+    cb.TypeMessage(response, ConsoleColor.Green); 
     Chatbot.DrawDivider();
 }
 else
@@ -118,18 +118,4 @@ else
 }
 
 }//Namespace
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

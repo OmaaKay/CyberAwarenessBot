@@ -62,21 +62,8 @@ namespace CyberAwarenessBot
         }
 
 
-
-
-
-
-
-
-
-
-
-   
-
-
-
-// Method to create a typing effect for a conversational feel
-public void TypeMessage(string message, ConsoleColor color = ConsoleColor.White) // ConsoleColor color = ConsoleColor.White
+// Method to create a typing effect for a conversational feel(responses specific)
+public void TypeMessage(string message, ConsoleColor color = ConsoleColor.White) 
 {
     Console.ForegroundColor = color;
     foreach (char c in message)
