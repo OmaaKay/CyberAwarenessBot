@@ -130,7 +130,11 @@ BOT: ALERT: Be cautious of phishing messages...
 - More advanced conversation handling  
 - Better natural language understanding  
 - Expanded cybersecurity topics  
-- Improved UI/UX and interaction flow  
+- Improved UI/UX and interaction flow
+
+  ## CI WORKFLOW
+  <img width="1162" height="665" alt="image" src="https://github.com/user-attachments/assets/5ad82495-a848-4045-94d4-69dfddde68a3" />
+
 
 ---
 
